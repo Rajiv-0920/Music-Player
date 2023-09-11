@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="song-playlist">
+        <ul class="song-list">
+          <i class="fa-solid fa-xmark exit"></i>
+        </ul>
+      </div>
+      <div class="background">
+        <img id="background" src="./images/tera fitoor.jpg" alt="" />
+      </div>
+      <header class="header">
+        <p class="title">Music</p>
+        <img
+          id="download"
+          class="download"
+          src="./images/music.svg"
+          alt="download"
+        />
+      </header>
+      <main>
+        <div class="music-img">
+          <div id="song-images" class="img">
+            <img
+              id="cover-img"
+              src="./images/tera fitoor.jpg"
+              class="active"
+              alt="Music Image"
+            />
+          </div>
+        </div>
+        <div class="music">
+          <div class="music-details">
+            <p id="name" class="music-name"></p>
+            <marquee id="artist" class="music-artist"> </marquee>
+          </div>
+          <audio
+            id="audio"
+            src="./Audio/Raataan Lambiyan.mp3"
+            type="audio/mpeg"
+          ></audio>
+          <div class="other-control">
+            <img
+              id="playlist"
+              class="playlist"
+              src="./images/playlist.svg"
+              alt=""
+            />
+
+            <svg
+              class="volume"
+              version="1.0"
+              xmlns="http://www.w3.org/2000/svg"
+              width="30.000000pt"
+              height="30.000000pt"
+              viewBox="0 0 30.000000 30.000000"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <metadata>
+                Created by potrace 1.16, written by Peter Selinger 2001-2019
+              </metadata>
+              <g
+                transform="translate(0.000000,30.000000) scale(0.005859,-0.005859)"
+                fill="#fff"
+                stroke="none"
+              >
+                <path
+                  class="full-volume"
+                  d="M3525 4734 c-76 -42 -115 -105 -115 -187 0 -42 6 -63 26 -93 36 -54
+55 -68 164 -122 221 -110 379 -222 540 -382 168 -168 285 -334 391 -555 331
+-693 223 -1504 -280 -2107 -171 -204 -383 -367 -651 -500 -109 -54 -128 -68
+-164 -122 -47 -70 -30 -183 36 -242 82 -75 163 -73 328 10 239 120 411 240
+589 411 373 359 611 804 703 1313 20 112 23 159 23 402 0 243 -3 290 -23 402
+-92 509 -330 954 -703 1313 -178 171 -350 291 -589 411 -99 49 -124 58 -180
+61 -46 2 -74 -1 -95 -13z"
+                />
+                <path
+                  d="M2124 4430 c-18 -4 -47 -16 -65 -28 -19 -12 -266 -253 -549 -537
+l-515 -515 -423 0 c-337 0 -429 -3 -455 -14 -39 -17 -92 -71 -106 -109 -7 -19
+-11 -241 -11 -668 0 -522 3 -646 14 -672 17 -39 71 -92 109 -106 18 -7 177
+-11 450 -11 l422 0 520 -521 c286 -286 534 -527 550 -536 85 -45 173 -34 240
+31 27 25 47 56 54 81 15 55 15 3413 0 3468 -26 94 -139 160 -235 137z"
+                />
+                <path
+                  class="fifty-volume"
+                  d="M3220 4014 c-75 -32 -120 -102 -120 -184 0 -103 34 -141 208 -238
+306 -171 500 -417 589 -749 25 -89 27 -114 27 -283 0 -169 -2 -194 -27 -283
+-89 -332 -283 -578 -589 -749 -174 -97 -208 -135 -208 -238 0 -115 88 -200
+208 -200 73 0 307 125 447 240 267 219 472 552 546 891 45 209 45 469 0 678
+-91 414 -357 790 -712 1007 -187 114 -287 144 -369 108z"
+                />
+                <path
+                  class="twentyFive-volume"
+                  d="M2905 3284 c-93 -48 -133 -143 -105 -245 12 -44 65 -95 172 -167 124
+-84 170 -167 170 -312 0 -149 -44 -226 -182 -320 -116 -80 -157 -125 -165
+-184 -13 -85 13 -150 80 -202 30 -22 50 -29 101 -32 57 -4 72 0 136 30 195 93
+347 280 409 503 32 114 32 296 0 412 -51 181 -160 343 -294 435 -135 92 -248
+121 -322 82z"
+                />
+              </g>
+            </svg>
+            <input type="range" name="volume" id="volume" value="75" />
+          </div>
+          <div class="progress">
+            <p id="currentTime" class="starting-time">0:00</p>
+            <input type="range" name="seekbar" id="seekbar" value="0" />
+            <p id="end" class="ending-time">0:00</p>
+          </div>
+          <div class="controls">
+            <button id="shuffle" class="btn shuffle-btn">
+              <i class="fa-solid fa-shuffle"></i>
+            </button>
+            <button id="previous" class="btn previous-btn">
+              <i class="fa-solid fa-backward-fast"></i>
+            </button>
+            <button id="play" class="btn play-btn">
+              <i class="fa-solid fa-play"></i>
+            </button>
+            <button id="pause" class="btn hide pause-btn">
+              <i class="fa-solid fa-pause"></i>
+            </button>
+            <button id="next" class="btn next-btn">
+              <i class="fa-solid fa-forward-fast"></i>
+            </button>
+            <button id="repeat" class="btn repeat-btn">
+              <i class="fa-solid fa-repeat"></i>
+            </button>
+          </div>
+        </div>
+        <p class="coded">
+          Coded by
+          <a target="_blank" href="https://www.github.com/rajiv-0920"
+            >Rajiv 🧑‍💻</a
+          >
+        </p>
+      </main>
+    </div>
+  </body>
+</html>
